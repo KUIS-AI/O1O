@@ -25,9 +25,8 @@
 
 
   <title>O1O: Grouping of Known Classes to Identify Unknown Objects as Odd-One-Out</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="static/images/KUIS_AI_LOGO_2-vectorimage.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -162,28 +161,120 @@
 </section>
 <!-- End paper abstract -->
 
-  <!-- Method Overview -->
+<!-- Method Overview -->
 
-  <section class="section hero is-small">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="columns is-centered has-text-centered">
-          <h2 class="title is-2">Method Overview</h2>
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-2">Method Overview</h2>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="static/images/method.png" alt="MY ALT TEXT" style="width:100%">
         </div>
-        <div class="row">
-          <div class="column">
-            <img src="static/images/method.png" alt="MY ALT TEXT" style="width:100%">
+      </div>
+      <h2 class="subtitle has-text-justified " style="font-size : 18px">
+        Building on Deformable DETR (blue), we first add supervision for unknowns with geometric pseudo-labels. Following GOOD, we extract pseudo-labels (dashed) from a Region Proposal Network (RPN) trained on surface normal maps (green). This allows us to localize unknown objects based on geometric cues in a class-agnostic manner. Noisy pseudo-labels tend to hurt the known performance of a model. 
+        To mitigate this issue, we propose to group queries into superclasses with a superclass head (orange). By incorporating the learned prior from superclasses into the scoring function, we achieve the best balance between known and unknown performance.
+      </h2>
+    </div>
+  </div>
+  <br>
+  <hr>
+</section>
+
+
+<!-- Qualitative Results -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-2">Qualitative Results</h2>
+      </div>
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              We show the top-10 predictions compared to previous state-of-the-art on M-OWOD and S-OWOD benchmarks.
+            </p>
           </div>
+          <br>
         </div>
-        <h2 class="subtitle has-text-justified " style="font-size : 18px">
-          Building on Deformable DETR (blue), we first add supervision for unknowns with geometric pseudo-labels. Following GOOD, we extract pseudo-labels (dashed) from a Region Proposal Network (RPN) trained on surface normal maps (green). This allows us to localize unknown objects based on geometric cues in a class-agnostic manner. Noisy pseudo-labels tend to hurt the known performance of a model. 
-          To mitigate this issue, we propose to group queries into superclasses with a superclass head (orange). By incorporating the learned prior from superclasses into the scoring function, we achieve the best balance between known and unknown performance.
-        </h2>
+      </div>
+      <div>
+        <img src="static/results/m_1.png" alt="MY ALT TEXT" style="width:100%">
+      </div>
+      <div>
+        <img src="static/results/s_1.png" alt="MY ALT TEXT" style="width:100%">
       </div>
     </div>
-    <br>
-    <hr>
-  </section>
+  </div>
+</section>
+
+
+
+<!-- Qualitative Results -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-2">Quantitative Results</h2>
+      </div>
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              We compare O1O to the state-of-the-art on M-OWOD (top) and S-OWOD (bottom) across 4 different tasks on each.
+            </p>
+          </div>
+          <br>
+        </div>
+      </div>
+      <div>
+        <img src="static/results/quantitative.png" alt="MY ALT TEXT" style="width:100%">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Incremental Learning Results -->
+
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-2">Incremental Learning</h2>
+      </div>
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              We employ an exemplar fine-tuning strategy for incremental learning. 
+              Although some classes are unknown in the first tasks, O1O can still locate them. 
+              As the space of known categories expands, O1O learns to label them correctly without forgetting the previously learned classes, showing the effectiveness of our exemplar replay fine-tuning.
+            </p>
+          </div>
+          <br>
+        </div>
+      </div>
+      <div>
+        <img src="static/results/m_1234.png" alt="MY ALT TEXT" style="width:100%">
+      </div>
+      <div>
+        <img src="static/results/s_1234.png" alt="MY ALT TEXT" style="width:100%">
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--BibTex citation -->
