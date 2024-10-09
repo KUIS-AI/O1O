@@ -175,8 +175,8 @@
         </div>
       </div>
       <h2 class="subtitle has-text-justified " style="font-size : 18px">
-        Building on Deformable DETR (blue), we first add supervision for unknowns with geometric pseudo-labels. Following GOOD, we extract pseudo-labels (dashed) from a Region Proposal Network (RPN) trained on surface normal maps (green). This allows us to localize unknown objects based on geometric cues in a class-agnostic manner. Noisy pseudo-labels tend to hurt the known performance of a model. 
-        To mitigate this issue, we propose to group queries into superclasses with a superclass head (orange). By incorporating the learned prior from superclasses into the scoring function, we achieve the best balance between known and unknown performance.
+          Building on Deformable DETR (<span style="color: blue;">blue</span>), we first add supervision for unknowns with geometric pseudo-labels. Following GOOD, we extract pseudo-labels (<span style="color: black; text-decoration: dashed;">dashed</span>) from a Region Proposal Network (RPN) trained on surface normal maps (<span style="color: green;">green</span>). This allows us to localize unknown objects based on geometric cues in a class-agnostic manner. Noisy pseudo-labels tend to hurt the known performance of a model.
+          To mitigate this issue, we propose to group queries into superclasses with a superclass head (<span style="color: orange;">orange</span>). By incorporating the learned prior from superclasses into the scoring function, we achieve the best balance between known and unknown performance.
       </h2>
     </div>
   </div>
@@ -198,8 +198,8 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified">
             <p>
-              We show the top-10 predictions compared to previous state-of-the-art on M-OWOD and S-OWOD benchmarks.
-            </p>
+              We show the top-10 predictions compared to the previous state-of-the-art on M-OWOD and S-OWOD benchmarks. 
+              Compared to other methods, O1O prioritizes known objects with higher confidence and assigns lower scores to unknown predictions, demonstrating better calibration due to superclass supervision.            </p>
           </div>
           <br>
         </div>
@@ -216,7 +216,7 @@
 
 
 
-<!-- Qualitative Results -->
+<!-- Quantitative Results -->
 
 <section class="section hero is-small">
   <div class="container is-max-desktop">
@@ -230,6 +230,7 @@
           <div class="content has-text-justified">
             <p>
               We compare O1O to the state-of-the-art on M-OWOD (top) and S-OWOD (bottom) across 4 different tasks on each.
+              In each column, we highlight the <span style="background-color: #BDE6CD; color: black;">first</span>, <span style="background-color: #E2EEBC; color: black;">second</span>, and <span style="background-color: #FFF8C5; color: black;">third</span> best results.
             </p>
           </div>
           <br>
